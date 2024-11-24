@@ -1,0 +1,23 @@
+{
+    "name": "test-runner-demo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./src/server.js",
+        "test": "node --test --experimental-test-coverage --test-reporter tap --test-reporter-destination report.txt",
+        "format": "npx prettier . --write"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "type": "module",
+    "dependencies": {
+        "fastify": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "nodemailer": "^6.9.16"
+    },
+    "devDependencies": {
+        "prettier": "3.3.3"
+    }
+}

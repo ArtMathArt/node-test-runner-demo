@@ -1,0 +1,118 @@
+TAP version 13
+# {"level":30,"time":1732465478692,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-1","req":{"method":"POST","url":"/signup","host":"localhost:80","remoteAddress":"127.0.0.1"},"msg":"incoming request"}
+# Subtest: GET /
+    # Subtest: should return 404 if email missed in body
+    ok 1 - should return 404 if email missed in body
+      ---
+      duration_ms: 24.4471
+      ...
+    # Subtest: should return a 500 error if environment variables are not set
+    ok 2 - should return a 500 error if environment variables are not set
+      ---
+      duration_ms: 4.387
+      ...
+# {"level":30,"time":1732465478698,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-1","res":{"statusCode":404},"responseTime":5.003700017929077,"msg":"request completed"}
+# {"level":30,"time":1732465478702,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-2","req":{"method":"POST","url":"/signup","host":"localhost:80","remoteAddress":"127.0.0.1"},"msg":"incoming request"}
+# {"level":30,"time":1732465478705,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-2","res":{"statusCode":500},"responseTime":3.551400065422058,"msg":"request completed"}
+# {"level":30,"time":1732465478706,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-3","req":{"method":"POST","url":"/signup","host":"localhost:80","remoteAddress":"127.0.0.1"},"msg":"incoming request"}
+    # Subtest: should send email with with valid token
+    ok 3 - should send email with with valid token
+      ---
+      duration_ms: 9.7932
+      ...
+    1..3
+ok 1 - GET /
+  ---
+  duration_ms: 88.4579
+  type: 'suite'
+  ...
+# {"level":30,"time":1732465478712,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-3","res":{"statusCode":200},"responseTime":5.562300086021423,"msg":"request completed"}
+# {"level":30,"time":1732465478713,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-4","req":{"method":"GET","url":"/account?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QtZW1haWxAdGVzdC5jb20iLCJleHBpcmF0aW9uRGF0ZSI6MTczMjQ2OTA3OCwiaWF0IjoxNzMyNDY1NDc4fQ.RRoGqA_9ngnz4EWkvRaOfrW0Z8QIC0xucgHAle6eeDc","host":"localhost:80","remoteAddress":"127.0.0.1"},"msg":"incoming request"}
+# {"level":30,"time":1732465478715,"pid":18304,"hostname":"DESKTOP-SU3VECE","reqId":"req-4","res":{"statusCode":200},"responseTime":2.181999921798706,"msg":"request completed"}
+# Subtest: formatFileSize function
+    # Subtest: should return '0B' for sizeBytes = 0
+    ok 1 - should return '0B' for sizeBytes = 0 # SKIP
+      ---
+      duration_ms: 1.325
+      ...
+    # Subtest: should return '1.00 MB' for sizeBytes = 1048576
+    ok 2 - should return '1.00 MB' for sizeBytes = 1048576
+      ---
+      duration_ms: 0.2557
+      ...
+    # Subtest: should return '1.00 GB' for sizeBytes = 1073741824 @large
+    ok 3 - should return '1.00 GB' for sizeBytes = 1073741824 @large
+      ---
+      duration_ms: 0.1328
+      ...
+    # Subtest: should return '5.00 GB' for sizeBytes = 5368709120 @large
+    ok 4 - should return '5.00 GB' for sizeBytes = 5368709120 @large
+      ---
+      duration_ms: 0.1187
+      ...
+    1..4
+ok 2 - formatFileSize function
+  ---
+  duration_ms: 3.6811
+  type: 'suite'
+  ...
+# (node:22784) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Mocking fs.readFile in Node.js
+    # Subtest: should successfully read the content of a text file
+    ok 1 - should successfully read the content of a text file
+      ---
+      duration_ms: 2.4385
+      ...
+    1..1
+ok 3 - Mocking fs.readFile in Node.js
+  ---
+  duration_ms: 4.1313
+  type: 'suite'
+  ...
+# Subtest: Mocking setTimeout in Node.js
+    # Subtest: should successfully mock setTimeout
+    ok 1 - should successfully mock setTimeout
+      ---
+      duration_ms: 1.5067
+      ...
+    1..1
+ok 4 - Mocking setTimeout in Node.js
+  ---
+  duration_ms: 1.6369
+  type: 'suite'
+  ...
+# Subtest: Mocking the Date object in Node.js
+    # Subtest: should effectively mock the Date object starting from 200 milliseconds
+    ok 1 - should effectively mock the Date object starting from 200 milliseconds
+      ---
+      duration_ms: 0.4043
+      ...
+    1..1
+ok 5 - Mocking the Date object in Node.js
+  ---
+  duration_ms: 0.6153
+  type: 'suite'
+  ...
+1..5
+# tests 10
+# suites 5
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 1
+# todo 0
+# duration_ms 567.7265
+# start of coverage report
+# --------------------------------------------------------------------------------------
+# file                    | line % | branch % | funcs % | uncovered lines
+# --------------------------------------------------------------------------------------
+# src\app.js              |  86.32 |    73.68 |  100.00 | 24-26 31-33 38-40 43-45 91-94
+# src\formatter.js        | 100.00 |   100.00 |  100.00 | 
+# tests\app.test.js       | 100.00 |    91.67 |  100.00 | 
+# tests\formatter.test.js |  95.24 |   100.00 |   80.00 | 7
+# tests\index.test.js     | 100.00 |   100.00 |  100.00 | 
+# --------------------------------------------------------------------------------------
+# all files               |  94.59 |    87.76 |   96.88 |
+# --------------------------------------------------------------------------------------
+# end of coverage report
